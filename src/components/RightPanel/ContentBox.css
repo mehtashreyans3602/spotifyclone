@@ -1,0 +1,28 @@
+/* Apply the styles to the entire page or a specific container with a scrollbar */
+::-webkit-scrollbar {
+    width: 15px; /* Set the width of the scrollbar */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: #4a4a4a; /* Color of the scrollbar handle */
+     /* Rounded corners */
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: unset; /* Color of the scrollbar track */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker color when hovered */
+  }
+  
+  .spotifygrad {
+    background: conic-gradient(at 9% 82% ,black 10deg,purple 75deg,black 95deg,black 210deg,black 250deg,black 339deg);
+}
+
+
+
+
