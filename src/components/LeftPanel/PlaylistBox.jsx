@@ -1,5 +1,5 @@
 "use client"
-import '../LeftPanel/PlaylistBox.css';
+import '@/components/LeftPanel/PlaylistBox.css';
 import { useState } from "react";
 import CategoryButtons from "./CategoryButtons";
 import { FaPlus } from 'react-icons/fa';

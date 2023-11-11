@@ -1,6 +1,6 @@
-import AlbumBox from '../Albums/Albumbox';
-import '../RightPanel/ContentBox.css';
-import SongBox from '../Songs/SongBox';
+import AlbumBox from '@/components/Albums/AlbumBox';
+import '@/components/RightPanel/ContentBox.css';
+import SongBox from '@/components/Songs/SongBox';
 import { FaArrowLeft, FaArrowRight, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 const ContentBox = () => {
     return (
