@@ -3,16 +3,17 @@ import '@/components/LeftPanel/PlaylistBox.css';
 import { useState } from "react";
 import CategoryButtons from "./CategoryButtons";
 import { FaPlus } from 'react-icons/fa';
-const PlaylistBox = () => {
+const PlaylistBox = ({token_data}) => {
     const [activeCategory, setActiveCategory] = useState('playlist');
-
+    let token_info = token_data || '';
     const handleButtonClick = (category) => {
         setActiveCategory(category);
         // Add logic to handle category change
     };
     return (
         <div className="rounded-md  h-[70vh] bg-[#1C1C21] m-1 ">
-            <div className="w-full flex justify-between p-5 text-slate-200 font-medium text-md items-center">
+            {!token_data ? (<div className='flex w-full h-full justify-center items-center'><div className='text-2xl text-white justify-center items-center border-white border-2 p-20 rounded-md'>Log In First</div></div>):(<>
+                <div className="w-full flex justify-between p-5 text-slate-200 font-medium text-md items-center">
                 <span>Your Library</span>
                 <span><FaPlus/></span>
             </div>
@@ -38,6 +39,9 @@ const PlaylistBox = () => {
                     onClick={() => handleButtonClick('artists')}
                 />
             </div>
+            </>
+
+            )}
         </div>
     )
 };
