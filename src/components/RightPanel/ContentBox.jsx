@@ -47,25 +47,26 @@ const ContentBox = ({ thetokendata }) => {
                         <button className="py-3 px-6 bg-white rounded-full" onClick={handlelogout}>Log Out</button>}
                 </div>
             </div>
-            <div className="mt-20 rounded-md spotifygrad text-white p-3 m-5">
-                <div className="container mx-auto flex items-center justify-between">
-                    <div className='flex space-x-5'>
-                        <img src="ashes.jpeg" alt="Album Cover" className=" w-44  object-cover mb-4 rounded-md" />
-                        <div className='grid'>
-                            <h2 className="text-2xl font-semibold">Playlist of the Week</h2>
-                            <p className="text-sm">Discover the hottest tracks curated just for you!</p>
-                            <div className='space-x-5'>
-                                <button className="bg-[#1DB954] text-black text-lg font-medium px-6 py-2 rounded-full">Play</button>
-                                <button className="bg-black text-white border-white border-[1px] px-5 py-2 rounded-full">Follow</button>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
             {!token ? (<></>)
                 : (
                     <>
+                        <div className="mt-20 rounded-md spotifygrad text-white p-3 m-5">
+                            <div className="container mx-auto flex items-center justify-between">
+                                <div className='flex space-x-5'>
+                                    <img src="ashes.jpeg" alt="Album Cover" className=" w-44  object-cover mb-4 rounded-md" />
+                                    <div className='grid'>
+                                        <h2 className="text-2xl font-semibold">Playlist of the Week</h2>
+                                        <p className="text-sm">Discover the hottest tracks curated just for you!</p>
+                                        <div className='space-x-5'>
+                                            <button className="bg-[#1DB954] text-black text-lg font-medium px-6 py-2 rounded-full">Play</button>
+                                            <button className="bg-black text-white border-white border-[1px] px-5 py-2 rounded-full">Follow</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                         <div className='space-y-5 mx-5'>
                             <div className='px-3 text-white font-semibold text-xl'>Spotify Playlists</div>
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
