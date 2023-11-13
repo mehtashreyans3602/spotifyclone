@@ -6,7 +6,7 @@ import SongBox from '@/components/Songs/SongBox';
 import { FaArrowLeft, FaArrowRight, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 const ContentBox = ({thetokendata}) => {
     const CLIENT_ID = '1e63e30185a543a5b1f6636693be06bc';
-    const REDIRECT_URI = 'http://localhost:3000';
+    const REDIRECT_URI = 'https://spotifyclone-shreyans.vercel.app/';
     const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize'
     const RESPONSE_TYPE = 'token';
     const [token,SetToken] = useState("");
@@ -31,6 +31,7 @@ const ContentBox = ({thetokendata}) => {
         window.localStorage.removeItem("token");
         console.log("logout");
         console.log(token)
+        thetokendata("")
     }
     return (
         <div className="w-[76%] h-[90vh] rounded-md   bg-[#1C1C21] m-1 overflow-y-scroll text-md font-medium">
