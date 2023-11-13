@@ -4,13 +4,13 @@ import AlbumBox from '@/components/Albums/AlbumBox';
 import '@/components/RightPanel/ContentBox.css';
 import SongBox from '@/components/Songs/SongBox';
 import { FaArrowLeft, FaArrowRight, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
-const ContentBox = ({thetokendata}) => {
+const ContentBox = ({ thetokendata }) => {
     const CLIENT_ID = '1e63e30185a543a5b1f6636693be06bc';
     const REDIRECT_URI = 'https://spotifyclone-shreyans.vercel.app/';
     const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize'
     const RESPONSE_TYPE = 'token';
-    const [token,SetToken] = useState("");
-    
+    const [token, SetToken] = useState("");
+
     useEffect(() => {
         const hash = window.location.hash
         let newtoken = window.localStorage.getItem("token")
@@ -19,7 +19,7 @@ const ContentBox = ({thetokendata}) => {
             console.log(hash)
             console.log(newtoken)
             window.location.hash = "";
-            window.localStorage.setItem("token",newtoken)
+            window.localStorage.setItem("token", newtoken)
             console.table(newtoken);
             SetToken(newtoken);
             thetokendata(newtoken)
@@ -42,8 +42,8 @@ const ContentBox = ({thetokendata}) => {
                 </div>
                 <div className="flex space-x-5 text-md font-medium">
                     {!token ?
-                        <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}><button className="py-3 px-6 bg-white rounded-full">Log in</button></a> 
-                        : 
+                        <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}><button className="py-3 px-6 bg-white rounded-full">Log in</button></a>
+                        :
                         <button className="py-3 px-6 bg-white rounded-full" onClick={handlelogout}>Log Out</button>}
                 </div>
             </div>
@@ -63,47 +63,51 @@ const ContentBox = ({thetokendata}) => {
 
                 </div>
             </div>
-            <div className='space-y-5 mx-5'>
-                <div className='px-3 text-white font-semibold text-xl'>Spotify Playlists</div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                    <AlbumBox />
-                    <AlbumBox />
-                    <AlbumBox />
-                    <AlbumBox />
-                    <AlbumBox />
-                    <AlbumBox />
-                    <AlbumBox />
-                    <AlbumBox />
-                </div>
+            {!token ? (<></>)
+                : (
+                    <>
+                        <div className='space-y-5 mx-5'>
+                            <div className='px-3 text-white font-semibold text-xl'>Spotify Playlists</div>
+                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                                <AlbumBox />
+                                <AlbumBox />
+                                <AlbumBox />
+                                <AlbumBox />
+                                <AlbumBox />
+                                <AlbumBox />
+                                <AlbumBox />
+                                <AlbumBox />
+                            </div>
 
-            </div>
-            <div className="space-y-2">
-                <SongBox />
-                <SongBox />
-                <SongBox />
-                <SongBox />
-                <SongBox />
-                <SongBox />
-            </div>
-            <footer className="bg-black text-white p-8 flex flex-col gap-5">
-                <div className="container mx-auto flex justify-between border-b-2 border-b-white">
+                        </div>
+                        <div className="space-y-2">
+                            <SongBox />
+                            <SongBox />
+                            <SongBox />
+                            <SongBox />
+                            <SongBox />
+                            <SongBox />
+                        </div>
+                        <footer className="bg-black text-white p-8 flex flex-col gap-5">
+                            <div className="container mx-auto flex justify-between border-b-2 border-b-white">
 
-                    <div className="flex flex-row space-x-4">
-                        <a href="#" className="text-gray-300 hover:text-white">Company</a>
-                        <a href="#" className="text-gray-300 hover:text-white">Community</a>
-                        <a href="#" className="text-gray-300 hover:text-white">Useful Links</a>
-                    </div>
+                                <div className="flex flex-row space-x-4">
+                                    <a href="#" className="text-gray-300 hover:text-white">Company</a>
+                                    <a href="#" className="text-gray-300 hover:text-white">Community</a>
+                                    <a href="#" className="text-gray-300 hover:text-white">Useful Links</a>
+                                </div>
 
 
-                    <div className="flex space-x-4">
-                        <a href="#" className="text-gray-300 hover:text-white"><FaFacebook /></a>
-                        <a href="#" className="text-gray-300 hover:text-white"><FaTwitter /></a>
-                        <a href="#" className="text-gray-300 hover:text-white"><FaInstagram /></a>
+                                <div className="flex space-x-4">
+                                    <a href="#" className="text-gray-300 hover:text-white"><FaFacebook /></a>
+                                    <a href="#" className="text-gray-300 hover:text-white"><FaTwitter /></a>
+                                    <a href="#" className="text-gray-300 hover:text-white"><FaInstagram /></a>
 
-                    </div>
-                </div>
-                <div className='flex w-full justify-end '>Made By Shreyans Mehta</div>
-            </footer>
+                                </div>
+                            </div>
+                            <div className='flex w-full justify-end '>Made By Shreyans Mehta</div>
+                        </footer>
+                    </>)}
         </div>)
 }
 export default ContentBox;
